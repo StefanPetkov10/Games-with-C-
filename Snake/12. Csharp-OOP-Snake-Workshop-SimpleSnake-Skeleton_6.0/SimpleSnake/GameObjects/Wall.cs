@@ -13,6 +13,11 @@ namespace SimpleSnake.GameObjects
             this.InitializeBorders();
         }
 
+        internal bool IsPointOfWall(Point point)
+        {
+            throw new NotImplementedException();
+        }
+
         private void InitializeBorders()
         {
             SetHorizontalBorder(0);
