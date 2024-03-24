@@ -1,5 +1,6 @@
 ﻿namespace SimpleSnake
 {
+    using SimpleSnake.Core;
     using SimpleSnake.GameObjects;
     using Utilities;
 
@@ -13,6 +14,12 @@
             //point.Draw('@');
 
             Wall wall = new Wall(50, 20);
+
+            Snake snake = new Snake(wall);
+
+            Engine engine = new Engine(wall, snake);
+
+            engine.Run();
         }
     }
 }

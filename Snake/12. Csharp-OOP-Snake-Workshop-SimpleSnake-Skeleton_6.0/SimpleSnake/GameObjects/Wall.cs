@@ -13,10 +13,11 @@ namespace SimpleSnake.GameObjects
             this.InitializeBorders();
         }
 
-        internal bool IsPointOfWall(Point point)
-        {
-            throw new NotImplementedException();
-        }
+        public bool IsPointOfWall(Point snakeHead)
+             => snakeHead.LeftX == 0
+             || snakeHead.LeftX == this.LeftX
+             || snakeHead.TopY == 0
+             || snakeHead.TopY == this.TopY;
 
         private void InitializeBorders()
         {

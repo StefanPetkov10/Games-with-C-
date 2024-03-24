@@ -33,11 +33,7 @@ namespace SimpleSnake.GameObjects
         public int GetRandomPosition
             => new Random().Next(0, this.food.Length);
 
-        public bool IsPointOfWall(Point snakeHead)
-            => snakeHead.LeftX == 0
-            || snakeHead.LeftX == this.wall.LeftX
-            || snakeHead.TopY == 0
-            || snakeHead.TopY == this.wall.TopY;
+
 
         public bool IsMooving(Point direction)
         {
