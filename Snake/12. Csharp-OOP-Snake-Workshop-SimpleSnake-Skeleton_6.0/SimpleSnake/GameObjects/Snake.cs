@@ -6,7 +6,7 @@ namespace SimpleSnake.GameObjects
 {
     public class Snake
     {
-        private const char snakeSymbol = '■';
+        private const char snakeSymbol = '●';  // \u25CF
 
         private readonly Queue<Point> snake;
         private readonly Food[] food;
@@ -28,12 +28,18 @@ namespace SimpleSnake.GameObjects
             this.GetFoods();
             this.CreateSnake();
 
+            this.food[this.foodIndex].SetRandomPosition(this.snake);
+
         }
 
         public int GetRandomPosition
             => new Random().Next(0, this.food.Length);
 
-
+        public bool IsPointOfWall(Point snakeHead)
+            => snakeHead.LeftX == 0
+            || snakeHead.LeftX == this.wall.LeftX
+            || snakeHead.TopY == 0
+            || snakeHead.TopY == this.wall.TopY;
 
         public bool IsMooving(Point direction)
         {
