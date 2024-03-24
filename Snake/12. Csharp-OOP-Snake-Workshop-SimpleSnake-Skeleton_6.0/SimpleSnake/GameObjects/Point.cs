@@ -20,10 +20,10 @@ namespace SimpleSnake.GameObjects
             Console.Write(symbol);
         }
 
-        public void Draw(int leftX, int topY, char symbol)
-        {
-            Console.SetCursorPosition(leftX, topY);
-            Console.Write(symbol);
-        }
+        //public void Draw(int leftX, int topY, char symbol)
+        //{
+        //    Console.SetCursorPosition(leftX, topY);
+        //    Console.Write(symbol);
+        //}
     }
 }
